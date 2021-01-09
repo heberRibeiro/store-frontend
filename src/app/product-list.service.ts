@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-// import { Observable, of } from 'rxjs';
+import { Observable, of } from 'rxjs';
+
+import { Product } from './product';
 
 @Injectable({
   providedIn: 'root',
@@ -13,6 +15,8 @@ export class ProductListService {
 
   getProducts() {
     // return this.http.get('/assets/products.json');
-    return this.http.get(this.productListUrl);
+    return this.http.get<Product[]>(this.productListUrl, {
+      observe: 'response',
+    });
   }
 }
