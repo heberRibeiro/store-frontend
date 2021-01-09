@@ -9,7 +9,7 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
-  items: Product[];
+  items: Product[] = [];
   checkoutForm: any;
 
   constructor(
@@ -31,6 +31,6 @@ export class CartComponent implements OnInit {
     this.items = this.cartService.clearCart();
     this.checkoutForm.reset();
 
-    console.warn('Seu pedido foi registrado!');
+    window.alert('Seu pedido foi enviado!');
   }
 }

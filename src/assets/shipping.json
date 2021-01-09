@@ -1,14 +1,18 @@
 [
   {
-    "type": "Overnight",
+    "type": "Região Norte/Nordeste",
     "price": 25.99
   },
   {
-    "type": "2-Day",
+    "type": "Centro-Oeste",
+    "price": 20.99
+  },
+  {
+    "type": "Sul",
     "price": 9.99
   },
   {
-    "type": "Postal",
+    "type": "Sudeste",
     "price": 2.99
   }
 ]
