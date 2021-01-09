@@ -20,7 +20,8 @@ export class CartService {
   }
 
   clearCart() {
-    this.items = [];
+    const cleanList: Product[] = [];
+    this.items = cleanList;
     return this.items;
   }
 
