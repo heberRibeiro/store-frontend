@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  URL: 'https://unit-store-front.herokuapp.com/',
+  URL: 'https://unit-store.herokuapp.com/',
 };
