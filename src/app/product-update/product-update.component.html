@@ -4,18 +4,33 @@
   <div>
     <label for="productName">Nome</label>
     <input
+      #productName
       id="productName"
       type="text"
       formControlName="productName"
-      value=""
+      value="{{ nome }}"
     />
   </div>
+
   <div>
     <label for="productDescription">Descrição</label>
     <input
+      #productDescription
       id="productDescription"
       type="text"
       formControlName="productDescription"
+      value="{{ descricao }}"
+    />
+  </div>
+
+  <div>
+    <label for="productPrice">Preço</label>
+    <input
+      #productPrice
+      id="productPrice"
+      type="currency"
+      formControlName="productPrice"
+      value="{{ precoUnitario }}"
     />
   </div>
 

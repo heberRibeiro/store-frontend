@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-// import { products } from '../products';
 import { ProductListService } from '../product-list.service';
 
 @Component({
@@ -9,7 +8,6 @@ import { ProductListService } from '../product-list.service';
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent implements OnInit {
-  // products = products;
   products: any = [];
 
   constructor(private productListService: ProductListService) {}
@@ -29,10 +27,7 @@ export class ProductListComponent implements OnInit {
     window.alert('O produto foi deletado!');
   }
 
-  update(product: any) {
-    window.location.reload();
-    window.alert('O produto foi atualizado!');
-  }
+  update(product: any) {}
 
   getProducts(): void {
     this.products = this.productListService.getProducts();

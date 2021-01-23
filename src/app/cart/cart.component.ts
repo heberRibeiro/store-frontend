@@ -1,8 +1,8 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { CartService } from '../cart.service';
-import { Product } from '../product';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 
+import { Product } from '../product';
+import { CartService } from '../cart.service';
 import { CartSendService } from '../cart-send.service';
 
 @Component({
@@ -11,7 +11,6 @@ import { CartSendService } from '../cart-send.service';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
-  // @ViewChild('name') name: ElementRef;
   items: Product[] = [];
   checkoutForm: any;
 
