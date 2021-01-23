@@ -20,8 +20,13 @@ export class ProductListComponent implements OnInit {
       .subscribe((products) => (this.products = products.body));
   }
 
-  share() {
-    window.alert('The product has been shared!');
+  delete(product: any) {
+    const productId = product.id;
+
+    this.productListService.deleteProduct(productId).subscribe((res) => {});
+
+    window.location.reload();
+    window.alert('O produto foi deletado!');
   }
 
   getProducts(): void {
