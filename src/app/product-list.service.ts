@@ -7,7 +7,10 @@ import { environment } from '../environments/environment';
   providedIn: 'root',
 })
 export class ProductListService {
-  private productListUrl = `${environment.URL}produto`; // 'http://localhost:8080/produto';
+  private productListUrl = `${environment.URL}produto`;
+  private productByIdUrl = `${environment.URL}produto/`;
+  private deleteProductUrl = `${environment.URL}produto/`;
+  private updateProductUrl = `${environment.URL}produto/`;
 
   constructor(private http: HttpClient) {}
 
@@ -15,5 +18,19 @@ export class ProductListService {
     return this.http.get<Product[]>(this.productListUrl, {
       observe: 'response',
     });
+  }
+
+  getProductById(productId: any) {
+    return this.http.get<Product>(this.productByIdUrl + `${productId}`, {
+      observe: 'response',
+    });
+  }
+
+  deleteProduct(productId: number) {
+    return this.http.delete<any>(this.deleteProductUrl + `${productId}`);
+  }
+
+  updateProduct(productId: number, data: any) {
+    return this.http.put<any>(this.updateProductUrl + `${productId}`, data);
   }
 }

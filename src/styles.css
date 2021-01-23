@@ -79,10 +79,18 @@ button {
   border-radius: 2px;
   font-size: 14px;
   cursor: pointer;
-  background-color: #1976d2;
   color: white;
   border: none;
+  background-color: #1976d2;
 }
+
+.delete-button {
+  background-color: #dd0000;
+}
+
+/* .update-button {
+  background-color: #1976d2;
+} */
 
 .button:hover,
 button:hover {

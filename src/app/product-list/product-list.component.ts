@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-// import { products } from '../products';
 import { ProductListService } from '../product-list.service';
 
 @Component({
@@ -9,7 +8,6 @@ import { ProductListService } from '../product-list.service';
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent implements OnInit {
-  // products = products;
   products: any = [];
 
   constructor(private productListService: ProductListService) {}
@@ -20,9 +18,22 @@ export class ProductListComponent implements OnInit {
       .subscribe((products) => (this.products = products.body));
   }
 
-  share() {
-    window.alert('The product has been shared!');
+  delete(product: any) {
+    const productId = product.id;
+
+    const res = this.productListService.deleteProduct(productId).subscribe(
+      (res) => {
+        window.location.reload();
+        window.alert('O produto foi deletado!');
+      },
+      (err) => {
+        const { error, message, path, status } = err.error;
+        window.alert(`Ops!!! message: ${message}`);
+      }
+    );
   }
+
+  update(product: any) {}
 
   getProducts(): void {
     this.products = this.productListService.getProducts();

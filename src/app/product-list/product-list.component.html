@@ -12,5 +12,15 @@
 
   <p *ngIf="product.descricao">Descrição: {{ product.descricao }}</p>
 
-  <!-- <button (click)="share()">Share</button> -->
+  <div class="group-button">
+    <button class="delete-button" (click)="delete(product)">Deletar</button>
+
+    <button
+      class="update-button"
+      [routerLink]="['/product-update', product.id]"
+      (click)="update(product)"
+    >
+      Atualizar
+    </button>
+  </div>
 </div>
