@@ -8,15 +8,15 @@ import { environment } from '../environments/environment';
 })
 export class CartSendService {
   private vendaSendUrl = `${environment.URL}venda`;
-  // private itemVendaSendUrl = `${environment.URL}venda`;
+  private itemVendaSendUrl = `${environment.URL}item-venda`;
 
   constructor(private http: HttpClient) {}
 
-  sendVenda(data: Object) {
-    return this.http.post<any>('vendaSendUrl', data);
+  registerSale(data: Object) {
+    return this.http.post<any>(this.vendaSendUrl, data);
   }
 
-  // sendItemVenda(data: Object) {
-  //   return this.http.post<any>('itemVendaSendUrl', data);
-  // }
+  registerItemVenda(data: Object) {
+    return this.http.post<any>(this.itemVendaSendUrl, data);
+  }
 }

@@ -11,14 +11,14 @@
 
 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit($event)">
   <div>
-    <label for="name"> Nome </label>
-    <input #name id="name" type="text" formControlName="name" />
+    <label for="clienteId"> Id do Cliente </label>
+    <input #clienteId id="clienteId" type="text" formControlName="clienteId" />
   </div>
 
-  <div>
+  <!-- <div>
     <label for="address"> Endereço </label>
     <input #address id="address" type="text" formControlName="address" />
-  </div>
+  </div> -->
 
   <button class="button" type="submit">Enviar</button>
 </form>
