@@ -1,0 +1,23 @@
+<h2>Atualização de Produto</h2>
+
+<form [formGroup]="updateForm" (ngSubmit)="onSubmit($event)">
+  <div>
+    <label for="productName">Nome</label>
+    <input
+      id="productName"
+      type="text"
+      formControlName="productName"
+      value=""
+    />
+  </div>
+  <div>
+    <label for="productDescription">Descrição</label>
+    <input
+      id="productDescription"
+      type="text"
+      formControlName="productDescription"
+    />
+  </div>
+
+  <button class="button" type="submit">Atualizar</button>
+</form>
