@@ -29,6 +29,11 @@ export class ProductListComponent implements OnInit {
     window.alert('O produto foi deletado!');
   }
 
+  update(product: any) {
+    window.location.reload();
+    window.alert('O produto foi atualizado!');
+  }
+
   getProducts(): void {
     this.products = this.productListService.getProducts();
   }

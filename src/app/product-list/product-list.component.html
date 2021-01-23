@@ -12,5 +12,8 @@
 
   <p *ngIf="product.descricao">Descrição: {{ product.descricao }}</p>
 
-  <button (click)="delete(product)">Deletar</button>
+  <div class="group-button">
+    <button class="delete-button" (click)="delete(product)">Deletar</button>
+    <button class="update-button" (click)="update(product)">Atualizar</button>
+  </div>
 </div>
