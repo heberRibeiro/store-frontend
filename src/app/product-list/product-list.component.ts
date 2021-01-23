@@ -21,10 +21,16 @@ export class ProductListComponent implements OnInit {
   delete(product: any) {
     const productId = product.id;
 
-    this.productListService.deleteProduct(productId).subscribe((res) => {});
-
-    window.location.reload();
-    window.alert('O produto foi deletado!');
+    const res = this.productListService.deleteProduct(productId).subscribe(
+      (res) => {
+        window.location.reload();
+        window.alert('O produto foi deletado!');
+      },
+      (err) => {
+        const { error, message, path, status } = err.error;
+        window.alert(`Ops!!! message: ${message}`);
+      }
+    );
   }
 
   update(product: any) {}
